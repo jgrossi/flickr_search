@@ -13,11 +13,18 @@
 </form>
 <div class="row">
   <% 50.times do %>
-    <div class="col-xs-6 col-md-3">
-      <a href="#" class="btn btn-default btn-xs btn-block btn-save-image">Save Image</a>
+    <div class="col-xs-6 col-md-15">
       <a href="#" class="thumbnail">
         <img src="http://placehold.it/200x200" alt="">
       </a>
+      <div class="btn-group btn-group-justified btn-image-actions" role="group">
+        <a type="button" class="btn btn-default btn-sm" title="Save image to gallery">
+          <span class="glyphicon glyphicon-floppy-disk"></span>
+        </a>
+        <a type="button" class="btn btn-default btn-sm" title="Remove image from gallery">
+          <span class="glyphicon glyphicon-trash"></span>
+        </a>
+      </div>
     </div>
   <% end %>
 </div>
