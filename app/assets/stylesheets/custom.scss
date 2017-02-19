@@ -5,10 +5,18 @@ body {
 }
 
 .container {
-  max-width: 800px;
+  max-width: 850px;
 }
 
 .btn-image-actions {
   margin-top: -13px;
   margin-bottom: 18px;
+}
+
+#footer {
+  margin-top: 25px;
+  border-top: 1px solid #ccc;
+  padding-top: 10px;
+  color: #555;
+  font-size: 12px;
 }
