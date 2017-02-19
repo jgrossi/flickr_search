@@ -1,4 +1,4 @@
 Rails.application.routes.draw do
-  get 'home/index'
-  root 'home#index'
+  get 'photos/search', to: 'photos#search'
+  root 'photos#index'
 end

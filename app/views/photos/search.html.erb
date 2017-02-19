@@ -1,0 +1,17 @@
+<div class="row">
+  <% @photos.each do |url| %>
+    <div class="col-xs-6 col-sm-3 col-md-15">
+      <a href="#" class="thumbnail">
+        <img src="<%= url %>" alt="">
+      </a>
+      <div class="btn-group btn-group-justified btn-image-actions" role="group">
+        <a type="button" class="btn btn-default btn-sm" title="Save image to gallery">
+          <span class="glyphicon glyphicon-floppy-disk"></span>
+        </a>
+        <a type="button" class="btn btn-default btn-sm" title="Remove image from gallery">
+          <span class="glyphicon glyphicon-trash"></span>
+        </a>
+      </div>
+    </div>
+  <% end %>
+</div>
