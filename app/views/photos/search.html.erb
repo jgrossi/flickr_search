@@ -1,8 +1,6 @@
-<% if @photos.size %>
+<% if @photos.size > 0 %>
   <div class="well well-sm">Only first 100 images are shown.</div>
-<% end %>
-
-<div class="row">
+  <div class="row">
   <% @photos.each do |url| %>
     <div class="col-xs-6 col-sm-3 col-md-15">
       <a href="#" class="thumbnail">
@@ -19,3 +17,8 @@
     </div>
   <% end %>
 </div>
+<% else %>
+  <div class="well well-sm">No images found.</div>
+<% end %>
+
+

@@ -1,8 +1,6 @@
 class Photo < ApplicationRecord
-  def self.search(query, size = 'q')
-    list = flickr.photos.getRecent(text: query)
-    list.map do |p|
-      "https://farm#{p.farm}.staticflickr.com/#{p.server}/#{p.id}_#{p.secret}_#{size}.jpg"
-    end
+  def self.search(query)
+    list = flickr.photos.search(text: URI::encode(query))
+    list.map { |photo| FlickRaw::url_q(photo) }
   end
 end
