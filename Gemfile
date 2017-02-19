@@ -36,6 +36,7 @@ gem 'jbuilder', '~> 2.5'
 # gem 'capistrano-rails', group: :development
 
 gem 'rspec-rails'
+gem 'rails-controller-testing'
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'dotenv-rails'
 gem 'flickraw'

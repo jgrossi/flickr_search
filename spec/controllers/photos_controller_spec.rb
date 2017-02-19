@@ -7,6 +7,10 @@ RSpec.describe PhotosController, type: :controller do
       get :search
       expect(response).to have_http_status(:success)
     end
-  end
 
+    it "renders the search template" do
+      get :search
+      expect(response).to render_template(:search)
+    end
+  end
 end
