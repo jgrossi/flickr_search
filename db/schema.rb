@@ -16,7 +16,10 @@ ActiveRecord::Schema.define(version: 20170219222100) do
   enable_extension "plpgsql"
 
   create_table "photos", force: :cascade do |t|
-    t.integer  "flickr_id"
+    t.integer  "farm"
+    t.integer  "server"
+    t.string   "flickr_id"
+    t.string   "secret"
     t.string   "url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
