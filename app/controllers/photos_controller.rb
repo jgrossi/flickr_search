@@ -17,6 +17,11 @@ class PhotosController < ApplicationController
     @photos = Photo.all
   end
 
+  def destroy
+    @photo = Photo.find(params[:id])
+    render 'destroy.js.erb' if @photo.destroy
+  end
+
   private
   def photo_params
     params.require(:photo).permit(:farm, :server, :flickr_id, :secret)

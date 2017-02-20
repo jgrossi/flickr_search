@@ -10,14 +10,14 @@
     <th></th>
   </tr>
   <% @photos.each do |photo| %>
-    <tr>
+    <tr data-id="<%= photo.id %>">
       <td><%= photo.id %></td>
       <td><%= photo.farm %></td>
       <td><%= photo.server %></td>
       <td><a href="<%= photo.url %>"><%= photo.flickr_id %></a></td>
       <td><%= photo.secret %></td>
       <td class="text-right">
-        <a href="#" class="btn btn-danger btn-xs">Delete</a>
+        <%= link_to("Delete", photo , method: :delete, remote: true, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-xs') %>
       </td>
     </tr>
   <% end %>
