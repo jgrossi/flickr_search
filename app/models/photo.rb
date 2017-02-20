@@ -21,4 +21,8 @@ class Photo < ApplicationRecord
     object = OpenStruct.new(photo.attributes)
     self.url = FlickRaw.url_q(object)
   end
+
+  def self.in_gallery?(id)
+    !where(flickr_id: id).blank?
+  end
 end
