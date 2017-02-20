@@ -11,7 +11,7 @@
         <%= f.hidden_field :server, value: photo.server %>
         <%= f.hidden_field :flickr_id, value: photo.id %>
         <%= f.hidden_field :secret, value: photo.secret %>
-        <button type="submit" class="btn btn-default btn-sm btn-block btn-save" title="Save image to gallery">
+        <button type="submit" class="btn btn-default btn-sm btn-block btn-save" data-id="<%= photo.id %>">
           Save
         </button> 
       <% end %>
