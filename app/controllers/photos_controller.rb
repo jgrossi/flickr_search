@@ -10,7 +10,7 @@ class PhotosController < ApplicationController
 
   def create
     @photo = Photo.new(photo_params)
-    render 'create.js.erb' if @photo.save
+    render :create if @photo.save
   end
 
   def gallery
@@ -19,7 +19,7 @@ class PhotosController < ApplicationController
 
   def destroy
     @photo = Photo.find(params[:id])
-    render 'destroy.js.erb' if @photo.destroy
+    render :destroy if @photo.destroy
   end
 
   private
