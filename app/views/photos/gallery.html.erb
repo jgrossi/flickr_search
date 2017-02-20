@@ -1,0 +1,24 @@
+<p class="lead">My Gallery</p>
+
+<table class="table table-striped">
+  <tr>
+    <th>ID</th>
+    <th>Farm</th>
+    <th>Server</th>
+    <th>Flickr ID</th>
+    <th>Secret</th>
+    <th></th>
+  </tr>
+  <% @photos.each do |photo| %>
+    <tr data-id="<%= photo.id %>">
+      <td><%= photo.id %></td>
+      <td><%= photo.farm %></td>
+      <td><%= photo.server %></td>
+      <td><a href="<%= photo.url %>"><%= photo.flickr_id %></a></td>
+      <td><%= photo.secret %></td>
+      <td class="text-right">
+        <%= link_to("Delete", photo , method: :delete, remote: true, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-xs') %>
+      </td>
+    </tr>
+  <% end %>
+</table>
