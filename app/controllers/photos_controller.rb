@@ -13,6 +13,10 @@ class PhotosController < ApplicationController
     render 'create.js.erb' if @photo.save
   end
 
+  def gallery
+    @photos = Photo.all
+  end
+
   private
   def photo_params
     params.require(:photo).permit(:farm, :server, :flickr_id, :secret)
