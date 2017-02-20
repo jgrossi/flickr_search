@@ -15,7 +15,7 @@ RSpec.describe PhotosController, type: :controller do
   end
 
   describe "POST #create" do
-    let(:params) { { photo: { farm: 1, server: 2, flickr_id: '123', secret: 'secret' } } }
+    let(:params) { { photo: FactoryGirl.attributes_for(:photo) } }
     it "is an AJAX request" do
       post :create, xhr: true, params: params
       expect(response).to have_http_status(:success)
@@ -27,7 +27,7 @@ RSpec.describe PhotosController, type: :controller do
   end
 
   describe "DELETE #destroy" do
-    let(:params) { { photo: { farm: 1, server: 2, flickr_id: '123', secret: 'secret' } } }
+    let(:params) { { photo: FactoryGirl.attributes_for(:photo) } }
     it "removes a photo record from the database" do
       expect { post :create, xhr: true, params: params }.to change(Photo, :count).by(1)
     end

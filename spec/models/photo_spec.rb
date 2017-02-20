@@ -27,7 +27,7 @@ RSpec.describe Photo, type: :model do
   end
 
   context 'add image to library' do
-    let(:saved_photo) { Photo.create(farm: 3, server: 22, flickr_id: '32884678381', secret: '17ccf83780') }
+    let(:saved_photo) { FactoryGirl.create(:photo) }
     it 'cannot be valid without a farm field' do
       expect(Photo.new.valid?).to be_falsey
     end
