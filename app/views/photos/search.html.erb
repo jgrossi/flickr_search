@@ -1,4 +1,4 @@
-<% if @photos.size > 0 %>
+<% if @photos && @photos.size > 0 %>
   <p class="text-muted">Displaying first 100 images.</p>
   <div class="row">
   <% @photos.each do |photo| %>
@@ -22,6 +22,8 @@
     </div>
   <% end %>
 </div>
+<% elsif !@photos %>
+  <div class="alert alert-warning">Please, search for some text.</div>
 <% else %>
   <div class="alert alert-warning">Sorry, but we could not find any images related to "<%= params[:q] %>".</div>
 <% end %>

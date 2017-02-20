@@ -4,7 +4,7 @@ class PhotosController < ApplicationController
   end
 
   def search
-    @photos = Photo.search(params[:q])
+    @photos = Photo.search(params[:q]) unless params[:q].empty?
     @photo = Photo.new
   end
 

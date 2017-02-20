@@ -12,6 +12,11 @@ RSpec.describe PhotosController, type: :controller do
       get :search, params: { q: 'dog' }
       expect(response).to render_template(:search)
     end
+
+    it "renders the search template for empty query" do
+      get :search, params: { q: "" }
+      expect(response).to render_template(:search)
+    end
   end
 
   describe "POST #create" do
