@@ -4,14 +4,14 @@
   <% @photos.each do |photo| %>
     <div class="col-xs-6 col-sm-3 col-md-15">
       <a href="#" class="thumbnail">
-        <img src="<%= Photo.thumbnail(photo) %>" class="img-url" alt="">
+        <img src="<%= photo_thumbnail(photo) %>" class="img-url" alt="">
       </a>
       <%= form_for @photo, url: { action: 'create' }, remote: true do |f| %>
         <%= f.hidden_field :farm, value: photo.farm %>
         <%= f.hidden_field :server, value: photo.server %>
         <%= f.hidden_field :flickr_id, value: photo.id %>
         <%= f.hidden_field :secret, value: photo.secret %>
-        <% if Photo.in_gallery?(photo.id) %>
+        <% if photo_in_gallery?(photo.id) %>
           <a href="#" class="btn btn-success btn-sm btn-block btn-save">Saved</a>
         <% else %>
           <button type="submit" class="btn btn-default btn-sm btn-block btn-save" data-id="<%= photo.id %>">
