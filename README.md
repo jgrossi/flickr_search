@@ -15,6 +15,7 @@ You can save images to a shared Gallery. To visit it just click on `My Gallery`.
 
 - Tests with RSpec;
 - Github usage;
+- Git flow usage;
 - Deploy process to Heroku.
 
 ## Licence
